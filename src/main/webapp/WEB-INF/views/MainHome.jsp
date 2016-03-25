@@ -159,10 +159,10 @@ p.login{
 				<form action="RegisteredUserPage" class="form-inline" method="get">
 					<div class="form-group">
 						<label for="login"><p class= "navbutton"> User Name :</p> </label>
-					<input type="text" class="form-control" name="email" placeholder="Your Username"></br></br>
+					<input type="email" class="form-control" name="email" placeholder="Your Username" required></br></br>
 						
 						<label for="login"><p class= "navbutton"> Password :</p> </label>
-						<input type="password" class="form-control" name="password" placeholder="Password"> </br></br>
+						<input type="password" class="form-control" name="password" placeholder="Password" required> </br></br>
 						<button type="submit" class="btn btn-warning btn-lg"> Login </button>
 
 					</div>

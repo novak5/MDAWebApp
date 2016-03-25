@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>ViewRequest</title>
@@ -97,24 +99,22 @@ p.login{
 	
 	<!-- Body -->
 	<div class="container">
-	<h4><p class="text-success">Below profiles are interested in you.Best of luck!!!!</p></h4>
+	
 		<div class="container"> 
 	 		<div class="row"> 
 	   			<div class="col-md-6 col-lg-4">
 	    		<div class="panel panel-warning"> 
 		  			<div class="panel-heading">
-			 			<h3 class="panel-title">UserId:12356</h3>
+			 			
 		  			</div>
 		   			<div class="panel-body"> 
-		   				<img src="resources/images/ambika.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>
+		   			<!--  	<img src="resources/images/ambika.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>-->
 		    		</div>
 		    
 				</div>
-				<div class="col-md-6 col-lg-8">
-					<p class="text-info">Sent request on : 29 Dec 2015</p>
-					<p class="text-warning">Name : Ambika</p>
-					<p class="text-warning">Profession : Architect</p>
-					<p class="text-warning">Age : 27</p>
+				<div class="col-md-6 col-lg-8">					
+				<p class="text-warning">Name : <c:out value="${details.getName()}"/></p>
+					<p class="text-warning">Email : <c:out value="${details.getEmail()}"/></p>
 					<input class="btn btn-warning" type="button" value="View Profile">
 					<input class="btn btn-warning" type="button" value="Send interest">
 					<input class="btn btn-warning" type="button" value="Send message">

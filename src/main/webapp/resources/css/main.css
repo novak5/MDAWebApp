@@ -1,0 +1,62 @@
+
+#header {
+    background-color:#FF0033;
+	color:white;
+    text-align:center;
+    padding:15px;
+}
+p.title {
+    font-family: "Blackadder ITC";
+	font-size: 60px;
+}
+p.body {
+	font-family: "Book Antiqua (Body)";
+	font-size: 20px;
+}
+p.careers{
+	font-family: "Book Antiqua (Body)";
+	font-size: 20px;
+}
+p.navbutton{
+	font-family: "Tempus Sans ITC";
+	font-weight : bold;
+	font-size: 20px;
+}
+p.login{
+	font-family: "Tempus Sans ITC";
+	font-weight : bold;
+	font-size: 30px;
+}
+#footer {
+    background-color:#C8C8C8 ;
+    color:white;
+    clear:both;
+    text-align:center;
+	padding:5px;	 	 
+}
+	body{
+	padding-top:40px;
+	}
+.navbar-default{
+	background-color:#ff0f5f;
+	border-color:#ff0f5f;
+	color:#FFFFFF;
+}
+.error {
+	color: #ff0000;
+}
+
+.errorblock{
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding:8px;
+	margin:16px;
+}
+.panel-default {
+transparent:0.9;
+ margin-top:30px;
+}
+.tab-content{
+font-size: 18px;
+}

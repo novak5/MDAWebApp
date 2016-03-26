@@ -116,7 +116,7 @@ transparent:0.9;
 			<div class="panel-heading">
                   <strong>Take the first step in finding your soulmate by providing your basic information. It's simple and easy.</strong>
                 </div>
-	<form method="get" action="Registered" name="registrationform" style="margin:10px 0 0;">
+	<form method="post" action="Registered" name="registrationform" style="margin:10px 0 0;">
 									<div id="hp-regform-new1" class="signup mediumtxt paddt10" style="padding-left:25px;padding-right:25px;">
 										<dl id="REGISTERED_BY_DIV" class="fb_field">
 											<dt>

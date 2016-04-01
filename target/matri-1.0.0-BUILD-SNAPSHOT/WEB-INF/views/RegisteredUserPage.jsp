@@ -1,62 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
-<!---"https://www.youtube.com/watch?v=e6VYRVRoC40"  -->
 <head>
 	<meta charset= "utf-8">
 	<title> HappyMarriages</title>
 	<meta name="description" content= "MatrimonySite">
-	<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	
-<!-- Optional theme -->
-<link rel="stylesheet" href="css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href="resources/css/main.css" rel="stylesheet">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 </head>
 
 <style>
 
-#header {
-    background-color:#FF0033;
-	color:white;
-    text-align:center;
-    padding:15px;
-}
-p.title {
-    font-family: "Blackadder ITC";
-	font-size: 60px;
-}
-p.body {
-	font-family: "Book Antiqua (Body)";
-	font-size: 20px;
-}
-p.careers{
-	font-family: "Book Antiqua (Body)";
-	font-size: 20px;
-}
-p.navbutton{
-	font-family: "Tempus Sans ITC";
-	font-weight : bold;
-	font-size: 20px;
-}
-p.login{
-	font-family: "Tempus Sans ITC";
-	font-weight : bold;
-	font-size: 30px;
-}
-#footer {
-    background-color:#C8C8C8 ;
-    color:white;
-    clear:both;
-    text-align:center;
-	padding:5px;	 	 
-}
-	body{
-	padding-top:40px;
-	}
-.navbar-default{
-	background-color:#ff0f5f;
-	border-color:#ff0f5f;
-	color:#FFFFFF;
-}
 @CHARSET "ISO-8859-1";
 	a {
     color:#c46501;
@@ -185,13 +143,13 @@ a:hover {
 	
 	</div><!--End Container-->
 	</div>
-	<form>
-	<h3>Welcome user!!!</h3>
+	<form action="Search" class="form-inline" method="get">
+	<h3>Welcome <c:out value="${userName}" />!!!</h3>
 <div class="container">
     <div class="row"> 
     <div class="col-md-3"> 
 		<!--  <img src="images/mahe.jpg" alt="Text of the Image" width="150px">-->
-	<img src="images/mahe.jpg" class="img-circle" alt="Cinque Terre" width="200" height="180">
+	<img src="resources/images/mahe.jpg" class="img-circle" alt="Cinque Terre" width="200" height="180">
 	 </div> 
 	 <div class="col-md-9">
   
@@ -211,7 +169,7 @@ a:hover {
 
  <li class="list-group-item"><button type="button" class="btn btn-danger">My Partner Preferences</button></li> 
  <li class="list-group-item"><button type="button" class="btn btn-danger"> <span class="badge">New</span>Notifications</button></li> 
- <li class="list-group-item"><input type="button" class="btn btn-danger" value="Search"/></li> 
+ <li class="list-group-item"><input type="submit" class="btn btn-danger" value="Search"/></li> 
  <li class="list-group-item"> <button type="button" class="btn btn-danger">View the sent request</button> </li> 
   <li class="list-group-item"> <button type="button" class="btn btn-danger">Settings</button> </li> 
  </ul>

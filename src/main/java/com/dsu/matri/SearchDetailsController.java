@@ -60,6 +60,7 @@ public class SearchDetailsController {
 			logger.debug("profile name:" + r.getName());
 			logger.debug("profile age:" + r.getDob());
 			model.addAttribute("profile", r);
+			model.addAttribute("list", profiles);
 		}
 
 		return "SearchDetails";

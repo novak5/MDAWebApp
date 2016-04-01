@@ -6,7 +6,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>ViewRequest</title>
+<title>SearchResults</title>
 <meta name="description" content="MatrimonySite">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -59,6 +59,7 @@
 	</div>
 
 	<!-- Body -->
+	<h3 align="center">Search Results</h3>
 	<div class="container">
 		<div class="col-md-7">
 			<div class="tab-content text-capitalize text-left">
@@ -68,22 +69,51 @@
 							<div class="panel-heading"></div>
 							<div class="panel-body">
 								<!--  	<img src="resources/images/ambika.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>-->
+							 <c:forEach var="profile" items="${list}"> 
+    						<option value ="10">
+    						<p class="text-warning">
+								Name :
+								<c:out value="${profile.getName()}" />
+							</p>
+								<p class="text-warning">
+    							Email :<c:out value="${profile.getEmail()}"/>
+    						</p>
+    						<p class="text-warning">
+								MotherTongue :
+								<c:out value="${profile.getMotherTongue()}" />
+							</p>
+								<p class="text-warning">
+    							Religion :<c:out value="${profile.getReligion()}"/>
+    						</p>
+    						</p>
+								<p class="text-warning">
+    							Country :<c:out value="${profile.getCountry()}"/>
+    						</p>
+    						</p>
+								<p class="text-warning">
+    							Age :<c:out value="${profile.getAge()}"/>
+    						</p>
+    						<input class="btn btn-warning" type="button" value="View Profile" />
+							<input class="btn btn-warning" type="button"
+								value="Send interest" />
+								 <input class="btn btn-warning"
+								type="button" value="Send message" />
+								<hr/>
+    						</option>
+							</c:forEach>
+							
 							</div>
 
 						</div>
 						<div class="col-md-6 col-lg-8">
-							<p class="text-warning">
+							<!--  <p class="text-warning">
 								Name :
 								<c:out value="${profile.getName()}" />
-							</p>
-							<p class="text-warning">
-								Email :
-								<c:out value="${profile.getEmail()}" />
-							</p>
-							<input class="btn btn-warning" type="button" value="View Profile" />
-							<input class="btn btn-warning" type="button"
-								value="Send interest" /> <input class="btn btn-warning"
-								type="button" value="Send message" />
+							</p>-->
+						
+						
+							
+							
 						</div>
 					</div>
 				</div>

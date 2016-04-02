@@ -29,21 +29,40 @@ public class SearchDetailsController {
 	@RequestMapping(value = "/SearchDetails", method = RequestMethod.POST)
 
 	public String retrieve(@RequestParam("agefrom") String agefrom, @RequestParam("ageto") String ageto,
-			@RequestParam("heightfrom") String heightfrom, @RequestParam("heightto") String heightto,
-			@RequestParam("maritalstatus") String maritalstatus, @RequestParam("community") String community,
+			@RequestParam("heightfrom") String heightfrom, 
+			@RequestParam("heightto") String heightto,
+			@RequestParam("maritalstatus") String maritalstatus, 
+			@RequestParam("community") String community,
 			@RequestParam("mothertongue") String mothertongue,
-			@RequestParam("countryofresidence") String countryofresidence, @RequestParam("education") String education,
-			@RequestParam("education_area") String education_area, Model model) {
+			@RequestParam("countryofresidence") String countryofresidence, 
+			@RequestParam("education") String education,
+			@RequestParam("education_area") String education_area,
+			@RequestParam("gender") String gender,
+			@RequestParam(value="genderfem", required=false) String genderfem,
+			@RequestParam(value="gendermale", required=false) String gendermale,
+			Model model) {
 		System.out.println(maritalstatus);
+		//System.out.println(genderfem);
+		//System.out.println(gendermale);
+		System.out.println(gender);
 		String CollectionName = "registration";
 		MongoOperations mongoOps = (MongoOperations) mongoTemplate;
+		//String gen = "NULL";
+		/*if(gender=="M"){
+			gen="M"; //search for female profiles
+		}
+	    if(gender=="F")
+		{
+	    	gen="F"; //search for male profiles
+		}*/
+		//System.out.println(gender);
 		// Query query2 = new Query();
 		// query2.addCriteria(Criteria.where("MOTHERTONGUE").is(mothertongue));
 		Query query1 = new Query();
 		query1.addCriteria(Criteria.where("MOTHERTONGUE").is(mothertongue)
 				// .and("heightfrom").is(heightfrom).and("heightto").is(heightto).and("maritalstatus").is(maritalstatus).
 				.and("RELIGION").is(community)
-				// .and("MOTHERTONGUE").is(mothertongue)
+				.and("GENDER").is(gender)
 				// ("AGE").in(agefrom,ageto)
 				// .and("caste").is(caste)
 				.and("COUNTRY").is(countryofresidence)

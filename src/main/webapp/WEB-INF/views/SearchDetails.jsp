@@ -59,7 +59,7 @@
 	</div>
 
 	<!-- Body -->
-	<h3 align="center">Search Results</h3>
+	
 	<div class="container">
 		<div class="col-md-7">
 			<div class="tab-content text-capitalize text-left">
@@ -69,7 +69,17 @@
 							<div class="panel-heading"></div>
 							<div class="panel-body">
 								<!--  	<img src="resources/images/ambika.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>-->
-							 <c:forEach var="profile" items="${list}"> 
+							
+							Search Results
+							</div>
+
+						</div>
+						<div class="col-md-6 col-lg-8">
+							<!--  <p class="text-warning">
+								Name :
+								<c:out value="${profile.getName()}" />
+							</p>-->
+						 <c:forEach var="profile" items="${list}"> 
     						<option value ="10">
     						<p class="text-warning">
 								Name :
@@ -98,19 +108,9 @@
 								value="Send interest" />
 								 <input class="btn btn-warning"
 								type="button" value="Send message" />
-								<hr/>
+							<hr width=100% align=left>
     						</option>
 							</c:forEach>
-							
-							</div>
-
-						</div>
-						<div class="col-md-6 col-lg-8">
-							<!--  <p class="text-warning">
-								Name :
-								<c:out value="${profile.getName()}" />
-							</p>-->
-						
 						
 							
 							

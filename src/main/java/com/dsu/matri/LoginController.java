@@ -65,4 +65,16 @@ public class LoginController {
 	public String Search(ModelMap model) {
 		return "Search";
 	}
+	@RequestMapping(value="user",params="Search",method=RequestMethod.POST)
+    public String Search()
+    {
+        System.out.println("Action1 block called");
+        return "Search";
+    }
+    @RequestMapping(value="user",params="MyPhoto",method=RequestMethod.POST)
+    public String MyPhoto()
+    {
+        System.out.println("Action2 block called");
+        return "MyPhoto";
+    }
 }

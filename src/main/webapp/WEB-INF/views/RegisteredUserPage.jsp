@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -143,7 +144,8 @@ a:hover {
 	
 	</div><!--End Container-->
 	</div>
-	<form action="Search" class="form-inline" method="get">
+	 <form:form action="user" method="post">
+	<!--  <form action="Search" class="form-inline" method="get">-->
 	<h3>Welcome <c:out value="${userName}" />!!!</h3>
 <div class="container">
     <div class="row"> 
@@ -165,11 +167,11 @@ a:hover {
     
        <ul class="list-group"> 
     <li class="list-group-item"><button type="button" class="btn btn-danger">My Profile</button></li>
-<li class="list-group-item"><input class="btn btn-danger" type="button" value="My Photos" onlick="MyPhotos.html"></li>
-
+<li class="list-group-item">
+<input class="btn btn-danger" name="MyPhoto" type="submit" value="MyPhotos" onlick="MyPhoto.jsp"></li>
  <li class="list-group-item"><button type="button" class="btn btn-danger">My Partner Preferences</button></li> 
  <li class="list-group-item"><button type="button" class="btn btn-danger"> <span class="badge">New</span>Notifications</button></li> 
- <li class="list-group-item"><input type="submit" class="btn btn-danger" value="Search"/></li> 
+ <li class="list-group-item"><input type="submit"  name="Search" class="btn btn-danger" value="Search"/></li> 
  <li class="list-group-item"> <button type="button" class="btn btn-danger">View the sent request</button> </li> 
   <li class="list-group-item"> <button type="button" class="btn btn-danger">Settings</button> </li> 
  </ul>
@@ -190,7 +192,7 @@ a:hover {
     <span class="sr-only">40% Complete</span> 
     </div> 
     </div>
-    </form>
+   </form:form>
 <div id="footer">Copyright © 2015. All rights reserved. NOVAK </div>
 </body>
 </html>

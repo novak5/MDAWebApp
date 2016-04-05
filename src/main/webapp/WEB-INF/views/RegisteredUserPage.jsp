@@ -125,12 +125,12 @@ a:hover {
 		<div class "collapse navbar-collapse" id="navbar-collapse">
 		
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="home.html"><p class= "navbutton">Home</p></a>
-				<li><a href="aboutus.html"><p class= "navbutton">About us</p></a>
-				<li><a href="#investors"><p class= "navbutton">Investors</p></a>
-				<li><a href="#careers"><p class= "navbutton">Careers</p></a>
-				<li><a href="#contactus"><p class= "navbutton">Contact Us</p></a>
-				<li><a href="#services"><p class= "navbutton">Third Party Services</p></a>
+				<li><a href="MainHome"><p class= "navbutton">Home</p></a>
+				<li><a href="Aboutus"><p class= "navbutton">About us</p></a>
+				<li><a href="Investors"><p class= "navbutton">Investors</p></a>
+				<li><a href="MainHome"><p class= "navbutton">Careers</p></a>
+				<li><a href="MainHome"><p class= "navbutton">Contact Us</p></a>
+				<li><a href="Services"><p class= "navbutton">Third Party Services</p></a>
 				
 			</ul>
 		</div>
@@ -158,7 +158,7 @@ a:hover {
   		 <div class="row"> 
   		 	<div class="col-md-6"> 
   		 	<ul>
-<li><a href="#" >View the Matching Profiles</a>
+<li><a href="MatchingProfiles" >View the Matching Profiles</a>
 </li>
 
 </ul><br/>

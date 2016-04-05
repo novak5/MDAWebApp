@@ -60,10 +60,12 @@ public class SearchDetailsController {
 		// query2.addCriteria(Criteria.where("MOTHERTONGUE").is(mothertongue));
 		Query query1 = new Query();
 		query1.addCriteria(Criteria.where("MOTHERTONGUE").is(mothertongue)
-				// .and("heightfrom").is(heightfrom).and("heightto").is(heightto).and("maritalstatus").is(maritalstatus).
+				 //.and("heightfrom").is(heightfrom)
+				 //.and("heightto").is(heightto)
+				 //.and("maritalstatus").is(maritalstatus)
 				.and("RELIGION").is(community)
 				.and("GENDER").is(gender)
-				// ("AGE").in(agefrom,ageto)
+				 .and("AGE").in(agefrom,ageto)
 				// .and("caste").is(caste)
 				.and("COUNTRY").is(countryofresidence)
 		// .and("stateofresidence").is(stateofresidence)

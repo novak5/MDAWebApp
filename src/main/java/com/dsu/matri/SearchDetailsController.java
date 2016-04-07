@@ -27,7 +27,6 @@ public class SearchDetailsController {
 	MongoTemplate mongoTemplate;
 
 	@RequestMapping(value = "/SearchDetails", method = RequestMethod.POST)
-
 	public String retrieve(@RequestParam("agefrom") String agefrom, @RequestParam("ageto") String ageto,
 			@RequestParam("heightfrom") String heightfrom, 
 			@RequestParam("heightto") String heightto,

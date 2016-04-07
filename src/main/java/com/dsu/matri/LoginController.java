@@ -68,13 +68,19 @@ public class LoginController {
 	@RequestMapping(value="user",params="Search",method=RequestMethod.POST)
     public String Search()
     {
-        System.out.println("Action1 block called");
+		logger.info("Action1 block called");
         return "Search";
     }
     @RequestMapping(value="user",params="MyPhoto",method=RequestMethod.POST)
     public String MyPhoto()
     {
-        System.out.println("Action2 block called");
+    	logger.info("Action2 block called");
         return "MyPhoto";
     }
+   /* @RequestMapping(value="user",params="MatchingProfiles",method=RequestMethod.POST)
+    public String MatchingProfiles()
+    {
+    	logger.info("Action3 block called");
+        return "MatchingProfiles";
+    }*/
 }

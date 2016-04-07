@@ -158,7 +158,7 @@ a:hover {
   		 <div class="row"> 
   		 	<div class="col-md-6"> 
   		 	<ul>
-<li><a href="MatchingProfiles" >View the Matching Profiles</a>
+<li><a href="" >View the Matching Profiles</a>
 </li>
 
 </ul><br/>
@@ -168,12 +168,12 @@ a:hover {
        <ul class="list-group"> 
     <li class="list-group-item"><button type="button" class="btn btn-danger">My Profile</button></li>
 <li class="list-group-item">
-<input class="btn btn-danger" name="MyPhoto" type="submit" value="MyPhotos" onlick="MyPhoto.jsp"></li>
+<input class="btn btn-danger" name="MyPhoto" type="submit" value="MyPhotos" ></li>
  <li class="list-group-item"><button type="button" class="btn btn-danger">My Partner Preferences</button></li> 
  <li class="list-group-item"><button type="button" class="btn btn-danger"> <span class="badge">New</span>Notifications</button></li> 
  <li class="list-group-item"><input type="submit"  name="Search" class="btn btn-danger" value="Search"/></li> 
  <li class="list-group-item"> <button type="button" class="btn btn-danger">View the sent request</button> </li> 
-  <li class="list-group-item"> <button type="button" class="btn btn-danger">Settings</button> </li> 
+  <li class="list-group-item"> <input type="submit"  name="MatchingProfiles" class="btn btn-danger" value="MatchingProfiles"/> </li> 
  </ul>
      </div>
       </div> 

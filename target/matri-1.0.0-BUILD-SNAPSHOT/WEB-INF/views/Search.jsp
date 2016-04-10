@@ -100,7 +100,15 @@ body {
 												<input type="hidden" value="India"
 													name="loggercountryofresidence"
 													id="loggercountryofresidence" />
-
+												<div class="src_field_small">
+											<label class="form_label">Looking for</label>
+												<div class="src_field_box">
+                      				  <select name="gender" id="gender" multiple="multiple" class="src_field_select">
+																<option value="M" label="Male">Male</option>
+																	<option value="F" label="Female">Female</option>
+																	</select>    </div>  
+									<br clear="all" />
+											</div>
 												<div class="src_field_small">
 													<label class="form_label">Age</label>
 													<div class="src_field_box">
@@ -485,12 +493,7 @@ body {
 													<br clear="all" />
 												</div>
 
-												<div id='show_hide_caste'>
-													<div class="src_field">
-														<label class="form_label">Community</label>
-														<div class="src_field_box"></div>
-														<br clear="all" />
-													</div>
+			
 
 												</div>
 

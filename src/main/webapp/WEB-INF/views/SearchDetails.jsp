@@ -15,10 +15,26 @@
 <!-- Optional theme -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+ <script type="text/javascript">
+function promptMessage(){
+	prompt("Hi,I am interested in your profile","Default value");
+	//var form=document.frm;
+	//form.appendChild(document.createElement('div').innerHTML="<table width=\\40&#37;\\">" + "<tr><td><input type=\\"text\\" name=\\"txt\\"></td></tr>")
+	}
+</script>
 
-
+<!--  <script type="text/javascript">
+	$(document).ready(function(){
+    $('#showTextArea').click(function(){
+        $('#myTextArea').show();
+    });
+	});
+	</script>-->
 </head>
 <body>
+
+    
+
 	<!--Navbar-->
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-default">
 	<div class="container">
@@ -106,8 +122,10 @@
     						<input class="btn btn-warning" type="button" value="View Profile" />
 							<input class="btn btn-warning" type="button"
 								value="Send interest" />
-								 <input class="btn btn-warning"
-								type="button" value="Send message" />
+									
+							 <input class="btn btn-warning" type="button" value="Send message" id="showTextArea" onclick="promptMessage()"/>
+							<textarea id="myTextArea" style="display: none;">
+								
 							<hr width=100% align=left>
     						</option>
 							</c:forEach>
@@ -121,6 +139,7 @@
 		</div>
 	</div>
 	<!-- End of body -->
+
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script

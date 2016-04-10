@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,12 +125,12 @@ a:hover {
 		<div class "collapse navbar-collapse" id="navbar-collapse">
 		
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="home.html"><p class= "navbutton">Home</p></a>
-				<li><a href="aboutus.html"><p class= "navbutton">About us</p></a>
-				<li><a href="#investors"><p class= "navbutton">Investors</p></a>
-				<li><a href="#careers"><p class= "navbutton">Careers</p></a>
-				<li><a href="#contactus"><p class= "navbutton">Contact Us</p></a>
-				<li><a href="#services"><p class= "navbutton">Third Party Services</p></a>
+				<li><a href="MainHome"><p class= "navbutton">Home</p></a>
+				<li><a href="Aboutus"><p class= "navbutton">About us</p></a>
+				<li><a href="Investors"><p class= "navbutton">Investors</p></a>
+				<li><a href="MainHome"><p class= "navbutton">Careers</p></a>
+				<li><a href="MainHome"><p class= "navbutton">Contact Us</p></a>
+				<li><a href="Services"><p class= "navbutton">Third Party Services</p></a>
 				
 			</ul>
 		</div>
@@ -143,7 +144,8 @@ a:hover {
 	
 	</div><!--End Container-->
 	</div>
-	<form action="Search" class="form-inline" method="get">
+	 <form:form action="user" method="post">
+	<!--  <form action="Search" class="form-inline" method="get">-->
 	<h3>Welcome <c:out value="${userName}" />!!!</h3>
 <div class="container">
     <div class="row"> 
@@ -156,7 +158,7 @@ a:hover {
   		 <div class="row"> 
   		 	<div class="col-md-6"> 
   		 	<ul>
-<li><a href="#" >View the Matching Profiles</a>
+<li><a href="" >View the Matching Profiles</a>
 </li>
 
 </ul><br/>
@@ -165,13 +167,13 @@ a:hover {
     
        <ul class="list-group"> 
     <li class="list-group-item"><button type="button" class="btn btn-danger">My Profile</button></li>
-<li class="list-group-item"><input class="btn btn-danger" type="button" value="My Photos" onlick="MyPhotos.html"></li>
-
+<li class="list-group-item">
+<input class="btn btn-danger" name="MyPhoto" type="submit" value="MyPhotos" ></li>
  <li class="list-group-item"><button type="button" class="btn btn-danger">My Partner Preferences</button></li> 
  <li class="list-group-item"><button type="button" class="btn btn-danger"> <span class="badge">New</span>Notifications</button></li> 
- <li class="list-group-item"><input type="submit" class="btn btn-danger" value="Search"/></li> 
+ <li class="list-group-item"><input type="submit"  name="Search" class="btn btn-danger" value="Search"/></li> 
  <li class="list-group-item"> <button type="button" class="btn btn-danger">View the sent request</button> </li> 
-  <li class="list-group-item"> <button type="button" class="btn btn-danger">Settings</button> </li> 
+  <li class="list-group-item"> <input type="submit"  name="MatchingProfiles" class="btn btn-danger" value="MatchingProfiles"/> </li> 
  </ul>
      </div>
       </div> 
@@ -190,7 +192,7 @@ a:hover {
     <span class="sr-only">40% Complete</span> 
     </div> 
     </div>
-    </form>
+   </form:form>
 <div id="footer">Copyright © 2015. All rights reserved. NOVAK </div>
 </body>
 </html>

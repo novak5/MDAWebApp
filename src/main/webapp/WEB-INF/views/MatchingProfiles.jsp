@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -61,26 +62,31 @@
 	<!-- Body -->
 	
 	<div class="container">
-		<div class="col-md-7">
-			<div class="tab-content text-capitalize text-left">
+		
 				<div class="row">
 					<div class="col-md-6 col-lg-4">
 						<div class="panel panel-warning">
-							<div class="panel-heading"></div>
-							<div class="panel-body">
+							<div class="panel-heading">
+							
+							</div>
+					<div class="panel-body"> 
+		   				<img src="resources/images/female-i-o.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>
+		    		</div>
+							
 								<!--  	<img src="resources/images/ambika.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>-->
 							
-Matching Profiles							</div>
+Matching Profiles					
 
 						</div>
 						<div class="col-md-6 col-lg-8">
-							<!--  <p class="text-warning">
-								Name :
-								<c:out value="${profile.getName()}" />
-							</p>-->
+					
 						 <c:forEach var="profile" items="${list}"> 
-    						<option value ="10">
     						
+    						<p class="text-warning">
+    							UserID :
+    							<%= (int) (Math.random()*15777) %>
+    							
+    						</p>
     						<p class="text-warning">
 								MotherTongue :
 								<c:out value="${profile.getMotherTongue()}" />
@@ -93,19 +99,45 @@ Matching Profiles							</div>
     							Country :<c:out value="${profile.getbirth3()}"/>
     						</p>
     						
+							
+    						
     						<input class="btn btn-warning" type="button" value="View Profile" />
 							<input class="btn btn-warning" type="button"
 								value="Send interest" />
 								 <input class="btn btn-warning"
 								type="button" value="Send message" />
+							<div class="panel-body"> 
+		   				<img src="resources/images/female-i-o.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>
+		    		</div>
+								
 							<hr width=100% align=left>
-    						</option>
+    						
 							</c:forEach>
-						
-							
 							
 						</div>
-					</div>
+						<!--  <div class="pagination">
+						 <ul>
+						<li>
+						<c:forEach begin="${startPage}" end="${endPage}" var="p">
+						<a href="<c:url value="/user">
+						<c:param name="up" value="${p}"/>
+						${p}</c:url>">${p}</a>
+						</c:forEach>
+						</li>
+						</ul>
+					</div>-->
+					
+<div class="pagination">
+    <ul>
+        <li>
+        <c:forEach begin="${startPage}" end="${endPage}" var="p">
+        <a href="">${p}</a>
+        <!--  <a href="<c:url value="/user">
+        <c:param name="up" value="${up}"/>${up.getTotalPages()}</c:url>">${up}</a>-->
+        </c:forEach>
+        </li>
+    </ul>
+</div>
 				</div>
 			</div>
 		</div>

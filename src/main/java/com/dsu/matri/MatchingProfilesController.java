@@ -3,6 +3,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -26,23 +27,25 @@ import com.dsu.model.UserPreferences;
 
 @Controller
 public class MatchingProfilesController {
-	private static final Logger logger = Logger.getLogger(LoginController.class);
+	private static final Logger logger = Logger.getLogger(MatchingProfilesController.class);
 
 	@Autowired
 	MongoTemplate mongoTemplate;
 
 	@RequestMapping(value="user",params="MatchingProfiles", method = RequestMethod.POST)
-	 public String MatchingProfiles(Integer page,Model model){
+	 public String MatchingProfiles(@RequestParam(value="page", required=false) Integer page,Model model){
 			String CollectionName = "bride5";
 			MongoOperations mongoOps = (MongoOperations) mongoTemplate;
-
+			
 			Pageable pageable = new PageRequest(1,5);
 			logger.info(pageable.getPageSize());
-            page=1;
+            if (page==null) {
+            	page = 0;
+            }
 			Query query1 = new Query();
 			int startPage=(int)(page - 5 > 0 ? page-5:1);
-			int endPage=startPage+40;
-			
+			int endPage=startPage+39;
+		
 			/*List<UserPreferences> results = mongoTemplate.findAll(UserPreferences.class,CollectionName); 
 			for (UserPreferences rs : results) {
 				
@@ -57,14 +60,26 @@ public class MatchingProfilesController {
 					// .and("age2").in(21,27)
 					.and("birth3").is("India")
 			);
-		    
-
-			List<UserPreferences> profiles = mongoOps.find(query1, UserPreferences.class, CollectionName);
-			logger.info("Search results list size:" + profiles.size());
+		
 			query1.with(pageable);
+			List<UserPreferences> profiles = mongoOps.find(query1, UserPreferences.class, CollectionName);
+			logger.info("Search results list size with pageable:" + profiles.size());
+			
+			/*PagedListHolder<UserPreferences> pagedListHolder = new PagedListHolder<UserPreferences>(profiles);
+			pagedListHolder.setPage(page);
+			int pageSize = 5;
+			pagedListHolder.setPageSize(pageSize);
+			model.addAttribute("pagedListHolder", pagedListHolder);*/
+			
+			
+			
 			long count=mongoOps.count(query1, UserPreferences.class);
+			
+			model.addAttribute("list", profiles);
+			model.addAttribute("startPage",startPage);
+			model.addAttribute("endPage",endPage);
 
-			for (UserPreferences r : profiles) {
+			/*for (UserPreferences r : profiles) {
 				//logger.debug("profile name:" + r.getName());
 				//logger.debug("profile age:" + r.getDob());
 				//System.out.println( r.getMotherTongue());
@@ -73,12 +88,14 @@ public class MatchingProfilesController {
 				model.addAttribute("list", profiles);
 				
 				Page<UserPreferences> up= new PageImpl<UserPreferences>(profiles,pageable,count);
+				logger.info("page size:"+up.getSize());
+				logger.info("page information:"+ up.toString());
 				logger.info(up.getTotalPages());
 				logger.info(up.getNumberOfElements());
 				model.addAttribute("up",up);
 				model.addAttribute("startPage",startPage);
 				model.addAttribute("endPage",endPage);
-			}
+			}*/
 			return "MatchingProfiles";
 	 }
 	 

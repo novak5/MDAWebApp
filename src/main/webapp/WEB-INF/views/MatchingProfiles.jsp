@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="tg" tagdir="/WEB-INF/tags" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -69,18 +70,17 @@
 							<div class="panel-heading">
 							
 							</div>
-					<div class="panel-body"> 
-		   				<img src="resources/images/female-i-o.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>
-		    		</div>
+				
 							
 								<!--  	<img src="resources/images/ambika.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>-->
 							
 Matching Profiles					
 
 						</div>
+		
 						<div class="col-md-6 col-lg-8">
 					
-						 <c:forEach var="profile" items="${list}"> 
+						 <c:forEach var="profile" items="${list}" > 
     						
     						<p class="text-warning">
     							UserID :
@@ -94,7 +94,7 @@ Matching Profiles
 								<p class="text-warning">
     							Religion :<c:out value="${profile.getReligion()}"/>
     						</p>
-    						</p>
+    					
 								<p class="text-warning">
     							Country :<c:out value="${profile.getbirth3()}"/>
     						</p>
@@ -106,14 +106,22 @@ Matching Profiles
 								value="Send interest" />
 								 <input class="btn btn-warning"
 								type="button" value="Send message" />
-							<div class="panel-body"> 
+							
 		   				<img src="resources/images/female-i-o.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>
-		    		</div>
+		    		
 								
 							<hr width=100% align=left>
     						
 							</c:forEach>
-							
+							 <ul class="pagination pagination-sm">
+        <li>
+        <c:forEach begin="${startPage}" end="${endPage}" var="p">
+          <a href="#">${p}</a>
+      <!--     <a href="<c:url value="/user">
+        <c:param name="MatchingProfiles" value="MatchingProfiles"/></c:url>">${p}</a>-->
+        </c:forEach>
+        </li>
+    </ul>
 						</div>
 						<!--  <div class="pagination">
 						 <ul>
@@ -126,18 +134,19 @@ Matching Profiles
 						</li>
 						</ul>
 					</div>-->
-					
-<div class="pagination">
+
+<!--  <div class="pagination">
     <ul>
         <li>
-        <c:forEach begin="${startPage}" end="${endPage}" var="p">
-        <a href="">${p}</a>
-        <!--  <a href="<c:url value="/user">
-        <c:param name="up" value="${up}"/>${up.getTotalPages()}</c:url>">${up}</a>-->
-        </c:forEach>
+        <c:forEach begin="${startPage}" end="${endPage}" var="profile">
+          <a href="#">${profile}</a>
+      <!--     <a href="<c:url value="/user">
+        <c:param name="up" value="${up}"/></c:url>">${p}</a>-->
+     <!--   </c:forEach>
         </li>
     </ul>
 </div>
+-->
 				</div>
 			</div>
 		</div>

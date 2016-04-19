@@ -41,16 +41,27 @@ public class MatchingProfilesController {
 	// public String MatchingProfiles(@RequestParam(value="page", required=false) Integer page,Model model){
 	public String MatchingProfiles(@RequestParam(value="page", required=false) Integer page,@ModelAttribute("MyProfile") MyProfile data, 
             HttpServletRequest request,Model model) {
-String userName= data.getuserName();
-System.out.println( "userName=" + data.getuserName());
-String Collection = "registration";
-model.addAttribute("userName", userName);	
-String email= data.getuserName();
-System.out.println( "email=" + data.getemail());
-
-model.addAttribute("userName", email);	
+		MongoOperations mongoOps = (MongoOperations) mongoTemplate;
+			String userName= data.getuserName();
+		
+			String CollName = "registration";
+		
+			String email= data.getemail();
+			Query que = new Query();
+			que.addCriteria(Criteria.where("email").is(email)
+					.and("name").is(userName)
+				
+			);
+			Registration userpref= mongoOps.findOne(que, Registration.class, CollName);
+			String uMotherTongue=userpref.getUpmothertongue();
+			logger.info(uMotherTongue);
+			String uReligion=userpref.getUpreligion();
+			logger.info(uReligion);
+			String uCountry=userpref.getUpcountry();
+			logger.info(uCountry);
+			
 			String CollectionName = "bride5";
-			MongoOperations mongoOps = (MongoOperations) mongoTemplate;
+			
 			
 			Pageable pageable = new PageRequest(1,5);
 			logger.info(pageable.getPageSize());
@@ -60,7 +71,7 @@ model.addAttribute("userName", email);
             }
 			Query query1 = new Query();
 			int startPage=(int)(page - 5 > 0 ? page-5:1);
-			int endPage=startPage+39;
+			
 		
 			/*List<UserPreferences> results = mongoTemplate.findAll(UserPreferences.class,CollectionName); 
 			for (UserPreferences rs : results) {
@@ -71,10 +82,10 @@ model.addAttribute("userName", email);
 				query1.skip((page - 1 ) * 5);
 				query1.limit(5);
 			}*/
-			query1.addCriteria(Criteria.where("mother1").is("Telugu")
-					.and("religion1").is("Hindu")
+			query1.addCriteria(Criteria.where("mother1").is(uMotherTongue)
+					.and("religion1").is(uReligion)
 					// .and("age2").in(21,27)
-					.and("birth3").is("India")
+					.and("birth3").is(uCountry)
 			);
 		
 			query1.with(pageable);
@@ -87,70 +98,68 @@ model.addAttribute("userName", email);
 			pagedListHolder.setPageSize(pageSize);
 			model.addAttribute("pagedListHolder", pagedListHolder);*/
 			
-			
-			
-			long count=mongoOps.count(query1, UserPreferences.class);
+			Query query2 = new Query();
+			query2.addCriteria(Criteria.where("mother1").is(uMotherTongue)
+					.and("religion1").is(uReligion)
+					// .and("age2").in(21,27)
+					.and("birth3").is(uCountry)
+			);
+			List<UserPreferences> prof = mongoOps.find(query2, UserPreferences.class, CollectionName);
+			//long count=mongoOps.count(query2, UserPreferences.class, CollectionName);
+			logger.info("ProfileListCount"+ prof.size());
+			int value=profiles.size()/5;
+			int endPage=startPage+value;
 			
 			model.addAttribute("list", profiles);
 			model.addAttribute("startPage",startPage);
 			model.addAttribute("endPage",endPage);
-
-			/*for (UserPreferences r : profiles) {
-				//logger.debug("profile name:" + r.getName());
-				//logger.debug("profile age:" + r.getDob());
-				//System.out.println( r.getMotherTongue());
-				logger.info( r.getbirth3());
-				model.addAttribute("profile", r);
-				model.addAttribute("list", profiles);
-				
-				Page<UserPreferences> up= new PageImpl<UserPreferences>(profiles,pageable,count);
-				logger.info("page size:"+up.getSize());
-				logger.info("page information:"+ up.toString());
-				logger.info(up.getTotalPages());
-				logger.info(up.getNumberOfElements());
-				model.addAttribute("up",up);
-				model.addAttribute("startPage",startPage);
-				model.addAttribute("endPage",endPage);
-			}*/
+			
+		
 			return "MatchingProfiles";
 	 }
 	@RequestMapping(value="sublink", method = RequestMethod.GET)
-	 public String MProfiles(@RequestParam(value = "page", required = false) Integer page ,Model model){
+	 public String MProfiles(@RequestParam(value = "page", required = false) Integer page ,@ModelAttribute("MyProfile") MyProfile data,Model model){
 			String CollectionName = "bride5";
 			MongoOperations mongoOps = (MongoOperations) mongoTemplate;
-
-			Pageable pageable = new PageRequest(1,5);
-			logger.info(pageable.getPageSize());
-          //page=1;
-			Query query1 = new Query();
-			//String str=null;
-			/*if(page==null){
-				page = 1;
-				//page.equals(0);
-			}*/
-			int startPage=(int)(page - 5 > 0 ? page-5:1);
-			int endPage=startPage+50;
 			
-			/*List<UserPreferences> results = mongoTemplate.findAll(UserPreferences.class,CollectionName); 
-			for (UserPreferences rs : results) {
+			String userName= data.getuserName();
+			logger.info(userName);
+			String CollName = "registration";
+		
+			String email= data.getemail();
+			logger.info(email);
+			Query que = new Query();
+			que.addCriteria(Criteria.where("email").is(email)
+					.and("name").is(userName)
 				
-				System.out.println( rs.getbirth3());
-			}*/
-			/*if (5> 0) {
-				query1.skip((page - 1 ) * 5);
-				query1.limit(5);
-			}*/
-			query1.addCriteria(Criteria.where("mother1").is("Telugu")
-					.and("religion1").is("Hindu")
+			);
+			Registration userpref= mongoOps.findOne(que, Registration.class, CollName);
+			String uMotherTongue=userpref.getUpmothertongue();
+		
+			String uReligion=userpref.getUpreligion();
+		
+			String uCountry=userpref.getUpcountry();
+			
+			
+			Pageable pageable = new PageRequest(1,5);
+      
+			Query query1 = new Query();
+			
+			int startPage=(int)(page - 5 > 0 ? page-5:1);
+			int endPage=startPage+20;
+			
+		
+			query1.addCriteria(Criteria.where("mother1").is(uMotherTongue)
+					.and("religion1").is(uReligion)
 					// .and("age2").in(21,27)
-					.and("birth3").is("India")
+					.and("birth3").is(uCountry)
 			);
 		    
 			query1.with(pageable);
 			List<UserPreferences> profiles = mongoOps.find(query1, UserPreferences.class, CollectionName);
 			logger.info("Search results list size:" + profiles.size());
 
-			long count=mongoOps.count(query1, UserPreferences.class);
+			//long count=mongoOps.count(query1, UserPreferences.class);
 			model.addAttribute("list", profiles);
 			model.addAttribute("startPage",startPage);
 			model.addAttribute("endPage",endPage);

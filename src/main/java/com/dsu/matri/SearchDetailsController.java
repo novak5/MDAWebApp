@@ -58,15 +58,15 @@ public class SearchDetailsController {
 		// Query query2 = new Query();
 		// query2.addCriteria(Criteria.where("MOTHERTONGUE").is(mothertongue));
 		Query query1 = new Query();
-		query1.addCriteria(Criteria.where("MOTHERTONGUE").is(mothertongue)
+		query1.addCriteria(Criteria.where("mothertongue").is(mothertongue)
 				 //.and("heightfrom").is(heightfrom)
 				 //.and("heightto").is(heightto)
 				 //.and("maritalstatus").is(maritalstatus)
-				.and("RELIGION").is(community)
-				.and("GENDER").is(gender)
-				 .and("AGE").in(agefrom,ageto)
+				.and("religion").is(community)
+				.and("gender").is(gender)
+				 .and("age").in(agefrom,ageto)
 				// .and("caste").is(caste)
-				.and("COUNTRY").is(countryofresidence)
+				.and("country").is(countryofresidence)
 		// .and("stateofresidence").is(stateofresidence)
 		// .and("nearest_city").is(nearest_city)
 		// .and("education").is(education)

@@ -144,14 +144,18 @@ a:hover {
 	
 	</div><!--End Container-->
 	</div>
-	 <form:form action="user" method="post">
+	 <form:form action="user" method="post" commandName="MyProfile">
 	<!--  <form action="Search" class="form-inline" method="get">-->
 	<h3>Welcome <c:out value="${userName}" />!!!</h3>
+	 
+	<input type="hidden"  name="userName" value="${userName}">
+	<input type="hidden"  name="email" value="${email}">
+	
 <div class="container">
     <div class="row"> 
     <div class="col-md-3"> 
 		<!--  <img src="images/mahe.jpg" alt="Text of the Image" width="150px">-->
-	<img src="resources/images/mahe.jpg" class="img-circle" alt="Cinque Terre" width="200" height="180">
+	<img src="" class="img-circle" alt="Cinque Terre" width="200" height="180">
 	 </div> 
 	 <div class="col-md-9">
   
@@ -166,7 +170,7 @@ a:hover {
    		 <div class="col-md-6"> 
     
        <ul class="list-group"> 
-    <li class="list-group-item"><button type="button" class="btn btn-danger">My Profile</button></li>
+    <li class="list-group-item"><input type="submit"  name="MyProfile" class="btn btn-danger" value="MyProfile" /></li>
 <li class="list-group-item">
 <input class="btn btn-danger" name="MyPhoto" type="submit" value="MyPhotos" ></li>
  <li class="list-group-item"><button type="button" class="btn btn-danger">My Partner Preferences</button></li> 

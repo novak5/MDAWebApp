@@ -1,5 +1,8 @@
 package com.dsu.matri;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +20,12 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dsu.model.MyProfile;
 import com.dsu.model.Registration;
 import com.dsu.model.UserPreferences;
 
@@ -33,7 +38,17 @@ public class MatchingProfilesController {
 	MongoTemplate mongoTemplate;
 
 	@RequestMapping(value="user",params="MatchingProfiles", method = RequestMethod.POST)
-	 public String MatchingProfiles(@RequestParam(value="page", required=false) Integer page,Model model){
+	// public String MatchingProfiles(@RequestParam(value="page", required=false) Integer page,Model model){
+	public String MatchingProfiles(@RequestParam(value="page", required=false) Integer page,@ModelAttribute("MyProfile") MyProfile data, 
+            HttpServletRequest request,Model model) {
+String userName= data.getuserName();
+System.out.println( "userName=" + data.getuserName());
+String Collection = "registration";
+model.addAttribute("userName", userName);	
+String email= data.getuserName();
+System.out.println( "email=" + data.getemail());
+
+model.addAttribute("userName", email);	
 			String CollectionName = "bride5";
 			MongoOperations mongoOps = (MongoOperations) mongoTemplate;
 			

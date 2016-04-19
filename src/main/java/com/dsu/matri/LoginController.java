@@ -44,13 +44,14 @@ public class LoginController {
 		MongoOperations mongoOps = (MongoOperations) mongoTemplate;
 
 		Query query = new Query();
-		query.addCriteria(Criteria.where("EMAIL").is(email));
-		query.addCriteria(Criteria.where("PASSWD1").is(AESencrp.encrypt(password)));
+		query.addCriteria(Criteria.where("email").is(email));
+		query.addCriteria(Criteria.where("password").is(AESencrp.encrypt(password)));
 		Registration user = mongoOps.findOne(query, Registration.class, CollectionName);
 
 		if ((user != null) && (email.equals(user.getEmail()))) {
 			logger.debug("Entered login details are correct and login successful.");
 			model.addAttribute("userName", user.getName());
+			model.addAttribute("emali",user.getEmail());
 			return "RegisteredUserPage";
 		} else {
 			logger.error("Entered login details are not found in the existing database.");
@@ -77,6 +78,7 @@ public class LoginController {
     	logger.info("Action2 block called");
         return "MyPhoto";
     }
+    
    /* @RequestMapping(value="user",params="MatchingProfiles",method=RequestMethod.POST)
     public String MatchingProfiles()
     {

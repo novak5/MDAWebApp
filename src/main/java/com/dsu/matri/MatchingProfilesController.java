@@ -39,8 +39,9 @@ public class MatchingProfilesController {
 			
 			Pageable pageable = new PageRequest(1,5);
 			logger.info(pageable.getPageSize());
-            if (page==null) {
-            	page = 0;
+			//page = 1;
+           if (page==null) {
+            	page = 1;
             }
 			Query query1 = new Query();
 			int startPage=(int)(page - 5 > 0 ? page-5:1);
@@ -64,7 +65,7 @@ public class MatchingProfilesController {
 			query1.with(pageable);
 			List<UserPreferences> profiles = mongoOps.find(query1, UserPreferences.class, CollectionName);
 			logger.info("Search results list size with pageable:" + profiles.size());
-			
+		
 			/*PagedListHolder<UserPreferences> pagedListHolder = new PagedListHolder<UserPreferences>(profiles);
 			pagedListHolder.setPage(page);
 			int pageSize = 5;
@@ -98,5 +99,47 @@ public class MatchingProfilesController {
 			}*/
 			return "MatchingProfiles";
 	 }
-	 
+	@RequestMapping(value="sublink", method = RequestMethod.GET)
+	 public String MProfiles(@RequestParam(value = "page", required = false) Integer page ,Model model){
+			String CollectionName = "bride5";
+			MongoOperations mongoOps = (MongoOperations) mongoTemplate;
+
+			Pageable pageable = new PageRequest(1,5);
+			logger.info(pageable.getPageSize());
+          //page=1;
+			Query query1 = new Query();
+			//String str=null;
+			/*if(page==null){
+				page = 1;
+				//page.equals(0);
+			}*/
+			int startPage=(int)(page - 5 > 0 ? page-5:1);
+			int endPage=startPage+50;
+			
+			/*List<UserPreferences> results = mongoTemplate.findAll(UserPreferences.class,CollectionName); 
+			for (UserPreferences rs : results) {
+				
+				System.out.println( rs.getbirth3());
+			}*/
+			/*if (5> 0) {
+				query1.skip((page - 1 ) * 5);
+				query1.limit(5);
+			}*/
+			query1.addCriteria(Criteria.where("mother1").is("Telugu")
+					.and("religion1").is("Hindu")
+					// .and("age2").in(21,27)
+					.and("birth3").is("India")
+			);
+		    
+			query1.with(pageable);
+			List<UserPreferences> profiles = mongoOps.find(query1, UserPreferences.class, CollectionName);
+			logger.info("Search results list size:" + profiles.size());
+
+			long count=mongoOps.count(query1, UserPreferences.class);
+			model.addAttribute("list", profiles);
+			model.addAttribute("startPage",startPage);
+			model.addAttribute("endPage",endPage);
+
+			return "MatchingProfiles";
+	 }
 }

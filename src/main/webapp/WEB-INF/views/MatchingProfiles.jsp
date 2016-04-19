@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="tg" tagdir="/WEB-INF/tags" %>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -115,8 +115,10 @@ Matching Profiles
 							</c:forEach>
 							 <ul class="pagination pagination-sm">
         <li>
-        <c:forEach begin="${startPage}" end="${endPage}" var="p">
-          <a href="#">${p}</a>
+       <c:forEach begin="${startPage}" end="${endPage}" var="p">
+						<a href="<c:url value="sublink">
+						<c:param name="page" value="${p}"/>
+						</c:url>">${p}</a>
       <!--     <a href="<c:url value="/user">
         <c:param name="MatchingProfiles" value="MatchingProfiles"/></c:url>">${p}</a>-->
         </c:forEach>

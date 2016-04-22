@@ -57,6 +57,7 @@ public class SearchDetailsController {
 		//System.out.println(gender);
 		// Query query2 = new Query();
 		// query2.addCriteria(Criteria.where("MOTHERTONGUE").is(mothertongue));
+		logger.info(mothertongue);
 		Query query1 = new Query();
 		query1.addCriteria(Criteria.where("mothertongue").is(mothertongue)
 				 //.and("heightfrom").is(heightfrom)
@@ -64,7 +65,7 @@ public class SearchDetailsController {
 				 //.and("maritalstatus").is(maritalstatus)
 				.and("religion").is(community)
 				.and("gender").is(gender)
-				 .and("age").in(agefrom,ageto)
+				 //.and("age").in(agefrom,ageto)
 				// .and("caste").is(caste)
 				.and("country").is(countryofresidence)
 		// .and("stateofresidence").is(stateofresidence)

@@ -7,14 +7,15 @@ public class UserPreferences {
     private String mother1;
     private String birth3;
     private String religion1;
-    public UserPreferences(String age2,String height1,String degree,String birth3) {
+    private String profileID;
+    public UserPreferences(String age2,String height1,String degree,String birth3,String profileID) {
 		// TODO Auto-generated constructor stub
 		this.age2 = age2;
 		this.height1 = height1;
 		this.degree=degree;
 		//this.Profession=Profession;
 		this.birth3=birth3;
-		
+		this.profileID=profileID;
 	}
     public String getAge() {
   		// TODO Auto-generated method stub
@@ -57,5 +58,12 @@ public class UserPreferences {
   	}
   	public void setReligion(String religion1) {
   		this.religion1=religion1;
+  	}
+  	public String getProfileID() {
+  		// TODO Auto-generated method stub
+  		return profileID;
+  	}
+  	public void setProfileID(String profileID) {
+  		this.profileID=profileID;
   	}
 }

@@ -33,35 +33,48 @@ import com.dsu.model.UserPreferences;
 @Controller
 public class MatchingProfilesController {
 	private static final Logger logger = Logger.getLogger(MatchingProfilesController.class);
-
+	String userName;
+	String userEmail;
+	String CollectionName;
 	@Autowired
 	MongoTemplate mongoTemplate;
-
+	
 	@RequestMapping(value="user",params="MatchingProfiles", method = RequestMethod.POST)
-	// public String MatchingProfiles(@RequestParam(value="page", required=false) Integer page,Model model){
+	
 	public String MatchingProfiles(@RequestParam(value="page", required=false) Integer page,@ModelAttribute("MyProfile") MyProfile data, 
             HttpServletRequest request,Model model) {
 		MongoOperations mongoOps = (MongoOperations) mongoTemplate;
-			String userName= data.getuserName();
+			 userName= data.getuserName();
 		
 			String CollName = "registration";
 		
-			String email= data.getemail();
+			 userEmail= data.getemail();
 			Query que = new Query();
-			que.addCriteria(Criteria.where("email").is(email)
+			que.addCriteria(Criteria.where("email").is(userEmail)
 					.and("name").is(userName)
 				
 			);
 			Registration userpref= mongoOps.findOne(que, Registration.class, CollName);
+			String userGender=userpref.getGender();
+			
 			String uMotherTongue=userpref.getUpmothertongue();
 			logger.info(uMotherTongue);
 			String uReligion=userpref.getUpreligion();
 			logger.info(uReligion);
 			String uCountry=userpref.getUpcountry();
 			logger.info(uCountry);
-			
-			String CollectionName = "bride5";
-			
+			//String CollectionName = null;
+			if(userGender.equalsIgnoreCase("M")){
+				logger.info("search for female profiles");
+				 CollectionName = "brides"; 
+			}
+		    if(userGender.equalsIgnoreCase("F"))
+			{
+		    	logger.info("Search for male profiles");
+		    	 CollectionName = "grooms";
+			}
+			//String CollectionName = "grooms";
+			logger.info(CollectionName);
 			
 			Pageable pageable = new PageRequest(1,5);
 			logger.info(pageable.getPageSize());
@@ -92,11 +105,7 @@ public class MatchingProfilesController {
 			List<UserPreferences> profiles = mongoOps.find(query1, UserPreferences.class, CollectionName);
 			logger.info("Search results list size with pageable:" + profiles.size());
 		
-			/*PagedListHolder<UserPreferences> pagedListHolder = new PagedListHolder<UserPreferences>(profiles);
-			pagedListHolder.setPage(page);
-			int pageSize = 5;
-			pagedListHolder.setPageSize(pageSize);
-			model.addAttribute("pagedListHolder", pagedListHolder);*/
+
 			
 			Query query2 = new Query();
 			query2.addCriteria(Criteria.where("mother1").is(uMotherTongue)
@@ -107,9 +116,8 @@ public class MatchingProfilesController {
 			List<UserPreferences> prof = mongoOps.find(query2, UserPreferences.class, CollectionName);
 			//long count=mongoOps.count(query2, UserPreferences.class, CollectionName);
 			logger.info("ProfileListCount"+ prof.size());
-			int value=profiles.size()/5;
+			int value=prof.size()/5;
 			int endPage=startPage+value;
-			
 			model.addAttribute("list", profiles);
 			model.addAttribute("startPage",startPage);
 			model.addAttribute("endPage",endPage);
@@ -118,18 +126,16 @@ public class MatchingProfilesController {
 			return "MatchingProfiles";
 	 }
 	@RequestMapping(value="sublink", method = RequestMethod.GET)
-	 public String MProfiles(@RequestParam(value = "page", required = false) Integer page ,@ModelAttribute("MyProfile") MyProfile data,Model model){
-			String CollectionName = "bride5";
+	 public String MProfiles(@RequestParam(value = "page", required = false) Integer page ,Model model){
+			String CollectionName = "grooms";
 			MongoOperations mongoOps = (MongoOperations) mongoTemplate;
 			
-			String userName= data.getuserName();
+			
 			logger.info(userName);
 			String CollName = "registration";
 		
-			String email= data.getemail();
-			logger.info(email);
 			Query que = new Query();
-			que.addCriteria(Criteria.where("email").is(email)
+			que.addCriteria(Criteria.where("email").is(userEmail)
 					.and("name").is(userName)
 				
 			);
@@ -144,10 +150,10 @@ public class MatchingProfilesController {
 			Pageable pageable = new PageRequest(1,5);
       
 			Query query1 = new Query();
-			
+			Query query2 = new Query();
+
 			int startPage=(int)(page - 5 > 0 ? page-5:1);
-			int endPage=startPage+20;
-			
+
 		
 			query1.addCriteria(Criteria.where("mother1").is(uMotherTongue)
 					.and("religion1").is(uReligion)
@@ -158,7 +164,21 @@ public class MatchingProfilesController {
 			query1.with(pageable);
 			List<UserPreferences> profiles = mongoOps.find(query1, UserPreferences.class, CollectionName);
 			logger.info("Search results list size:" + profiles.size());
+			
+			query2.addCriteria(Criteria.where("mother1").is(uMotherTongue)
+					.and("religion1").is(uReligion)
+					// .and("age2").in(21,27)
+					.and("birth3").is(uCountry)
+			);
+			List<UserPreferences> prof = mongoOps.find(query2, UserPreferences.class, CollectionName);
+			logger.info("ProfileListCount"+ prof.size());
 
+			int value=prof.size()/5;
+			logger.info("total Profile pages"+ value);
+
+			int endPage=startPage+value;
+			logger.info("End page is"+ endPage);
+			
 			//long count=mongoOps.count(query1, UserPreferences.class);
 			model.addAttribute("list", profiles);
 			model.addAttribute("startPage",startPage);

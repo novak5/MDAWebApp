@@ -83,9 +83,9 @@ Matching Profiles
 						 <c:forEach var="profile" items="${list}" > 
     						
     						<p class="text-warning">
-    							UserID :
-    							<%= (int) (Math.random()*15777) %>
-    							
+    		
+    							ProfileID :
+								<c:out value="${profile.getProfileID()}" />
     						</p>
     						<p class="text-warning">
 								MotherTongue :
@@ -115,6 +115,7 @@ Matching Profiles
 							</c:forEach>
 							 <ul class="pagination pagination-sm">
         <li>
+        
        <c:forEach begin="${startPage}" end="${endPage}" var="p">
 						<a href="<c:url value="sublink">
 						<c:param name="page" value="${p}"/>

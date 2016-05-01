@@ -119,6 +119,11 @@ function promptMessage(){
 								<p class="text-warning">
     							Age :<c:out value="${profile.getAge()}"/>
     						</p>
+    						    						<p class="text-warning">
+    							ProfileID :
+    							<%= (int) (Math.random()*15777) %>
+    							
+    						</p>
     						<input class="btn btn-warning" type="button" value="View Profile" />
 							<input class="btn btn-warning" type="button"
 								value="Send interest" />

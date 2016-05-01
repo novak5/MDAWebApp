@@ -62,7 +62,7 @@ public class SearchDetailsController {
 		query1.addCriteria(Criteria.where("mothertongue").is(mothertongue)
 				 //.and("heightfrom").is(heightfrom)
 				 //.and("heightto").is(heightto)
-				 //.and("maritalstatus").is(maritalstatus)
+				 .and("maritalstatus").is(maritalstatus)
 				.and("religion").is(community)
 				.and("gender").is(gender)
 				 //.and("age").in(agefrom,ageto)

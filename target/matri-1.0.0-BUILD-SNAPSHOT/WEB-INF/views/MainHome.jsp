@@ -35,12 +35,10 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="MainHome"><p class="navbutton">Home</p></a>
 					<li><a href="Aboutus"><p class="navbutton">About us</p></a>
-					<li><a href="Investors"><p class="navbutton">Investors</p></a>
-					<li><a href="#careers"><p class="navbutton">Careers</p></a>
 					<li><a href="#contactus"><p class="navbutton">Contact
 								Us</p></a>
-					<li><a href="Services"><p class="navbutton">Third
-								Party Services</p></a>
+					<li><a href="Services"><p class="navbutton">
+								 Services</p></a>
 				</ul>
 
 			</div>
@@ -139,39 +137,16 @@
 					<p class="careers">Contact us</p>
 				</h4>
 				<p class="careers">
-					<strong>HappyMarriages Ltd.</strong></br> No:94, TVH Beliciaa Towers,
-					10th Floor, Tower 2, MRC Nagar, Silk Board, Bangalore - 560 002.
+						<strong>HappyMarriages Ltd.</strong></br> Hosur Main Road, Kudlu Gate, Hongasandra Village, Begur Hobli, Bengaluru, Karnataka 560068
 					Karnataka, India.</br> <span class="glyphicon glyphicon-envelope">
 					</span> : info@happymarriages.com</br> <span
-						class="glyphicon glyphicon-earphone"></span> : +91 99868 15981
+						class="glyphicon glyphicon-earphone"></span> : +91 99001 99001
 				</p>
 			</div>
 			<!-- end of Contactus-->
 
 
-			<div class="col-lg-4" id="careers">
-				</br>
-				<h4>
-					<p class="careers">Careers</p>
-				</h4>
-				<p class="careers">At HappyMarriages Ltd, there are always
-					opportunities for those willing to take up challenging projects,
-					deal in latest technology and business models, put their diverse
-					expertise and minds into process and get the work done.</p>
-			</div>
-			<!-- end of Contactus-->
-
-			<div class="col-lg-4" id="careers">
-				</br>
-				<h4>
-					<p class="careers">Careers</p>
-				</h4>
-				<p class="careers">At HappyMarriages Ltd, there are always
-					opportunities for those willing to take up challenging projects,
-					deal in latest technology and business models, put their diverse
-					expertise and minds into process and get the work done.</p>
-			</div>
-			<!-- end of Contactus-->
+			
 		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>

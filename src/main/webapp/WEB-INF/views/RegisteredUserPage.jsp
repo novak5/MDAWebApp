@@ -15,6 +15,34 @@
 </head>
 
 <style>
+#header {
+    background-color:#FF0033;
+	color:white;
+    text-align:center;
+    padding:15px;
+}
+p.title {
+    font-family: "Forte";
+	font-size: 60px;
+}
+p.body {
+	font-family: "Book Antiqua (Body)";
+	font-size: 20px;
+}
+p.careers{
+	font-family: "Book Antiqua (Body)";
+	font-size: 20px;
+}
+p.navbutton{
+	font-family: "Tempus Sans ITC";
+	font-weight : bold;
+	font-size: 20px;
+}
+p.login{
+	font-family: "Tempus Sans ITC";
+	font-weight : bold;
+	font-size: 30px;
+}
 
 @CHARSET "ISO-8859-1";
 	a {
@@ -123,14 +151,12 @@ a:hover {
 		</button>
 		</div><!-- End navbar header--->
 		<div class "collapse navbar-collapse" id="navbar-collapse">
-		
+			`		<a href="MainHome" class="btn btn-warning navbar-btn navbar-right">Log out</a>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="MainHome"><p class= "navbutton">Home</p></a>
 				<li><a href="Aboutus"><p class= "navbutton">About us</p></a>
-				<li><a href="Investors"><p class= "navbutton">Investors</p></a>
-				<li><a href="MainHome"><p class= "navbutton">Careers</p></a>
 				<li><a href="MainHome"><p class= "navbutton">Contact Us</p></a>
-				<li><a href="Services"><p class= "navbutton">Third Party Services</p></a>
+				<li><a href="Services"><p class= "navbutton">Our Services</p></a>
 				
 			</ul>
 		</div>
@@ -145,40 +171,37 @@ a:hover {
 	</div><!--End Container-->
 	</div>
 	 <form:form action="user" method="post" commandName="MyProfile">
-	<!--  <form action="Search" class="form-inline" method="get">-->
-	<h3>Welcome <c:out value="${userName}" />!!!</h3>
-	 
-	<input type="hidden"  name="userName" value="${userName}">
-	<input type="hidden"  name="email" value="${email}">
-	
+	<!--  <form action="Search" class="form-inline" method="get">-->	
 <div class="container">
     <div class="row"> 
-    <div class="col-md-3"> 
-		<!--  <img src="images/mahe.jpg" alt="Text of the Image" width="150px">-->
-	<img src="" class="img-circle" alt="Cinque Terre" width="200" height="180">
+    <div class="col-md-6"> 
+		<h3>Welcome <c:out value="${userName}" />!!!</h3>
+	 		<input type="hidden"  name="userName" value="${userName}">
+			<input type="hidden"  name="email" value="${email}">
+				<div class="col-md-8 col-sm-6 col-xs-12">
+      			<div class="text-center">
+        			<img src="resources/images/girl.jpg" class="avatar img-circle img-thumbnail" alt="avatar">
+      			</div>
+    		</div>
+	<!-- <img src="" class="img-circle" alt="Cinque Terre" width="200" height="180">  -->
 	 </div> 
 	 <div class="col-md-9">
   
   		 <div class="row"> 
   		 	<div class="col-md-6"> 
-  		 	<ul>
-<li><a href="" >View the Matching Profiles</a>
-</li>
-
-</ul><br/>
+  		
     		</div> 
    		 <div class="col-md-6"> 
     
-       <ul class="list-group"> 
-    <li class="list-group-item"><input type="submit"  name="MyProfile" class="btn btn-danger" value="MyProfile" /></li>
-<li class="list-group-item">
-<input class="btn btn-danger" name="MyPhoto" type="submit" value="MyPhotos" ></li>
- <li class="list-group-item"><button type="button" class="btn btn-danger">My Partner Preferences</button></li> 
- <li class="list-group-item"><button type="button" class="btn btn-danger"> <span class="badge">New</span>Notifications</button></li> 
- <li class="list-group-item"><input type="submit"  name="Search" class="btn btn-danger" value="Search"/></li> 
- <li class="list-group-item"> <button type="button" class="btn btn-danger">View the sent request</button> </li> 
-  <li class="list-group-item"> <input type="submit"  name="MatchingProfiles" class="btn btn-danger" value="MatchingProfiles"/> </li> 
- </ul>
+       	<ul class="list-group"> 
+    		<li class="list-group-item"><input type="submit"  name="MyProfile" class="btn btn-danger" value="MyProfile" /></li>
+			<li class="list-group-item"><input class="btn btn-danger" name="MyPhoto" type="submit" value="MyPhotos" ></li>
+ 			<li class="list-group-item"><button type="button" class="btn btn-danger">My Partner Preferences</button></li> 
+ 			<li class="list-group-item"><button type="button" class="btn btn-danger"> <span class="badge">New</span>Notifications</button></li> 
+ 			<li class="list-group-item"><input type="submit"  name="Search" class="btn btn-danger" value="Search"/></li> 
+ 			<li class="list-group-item"> <button type="button" class="btn btn-danger">View the sent request</button> </li> 
+  			<li class="list-group-item"> <input type="submit"  name="MatchingProfiles" class="btn btn-danger" value="MatchingProfiles"/> </li> 
+ 		</ul>
      </div>
       </div> 
      <div class="row">
@@ -188,14 +211,7 @@ a:hover {
  	</div> 
  	</div> 
  	</div> </div>
-    	<h4>Your Profile Status:</h4> 
-    
-	
-	<div class="progress progress-striped active">
-    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"> 
-    <span class="sr-only">40% Complete</span> 
-    </div> 
-    </div>
+ 
    </form:form>
 <div id="footer">Copyright © 2015. All rights reserved. NOVAK </div>
 </body>

@@ -22,7 +22,7 @@
     padding:7px;
 }
 p.title {
-    font-family: "Blackadder ITC";
+    font-family: "Forte";
 	font-size: 60px;
 }
 p.body {
@@ -70,15 +70,13 @@ p.navbutton{
 		</div><!-- End navbar header--->
 		<div class "collapse navbar-collapse" id="navbar-collapse">
 		
-		<a href=" " class="btn btn-warning navbar-btn navbar-right">Login</a>
+		<a href="MainHome" class="btn btn-warning navbar-btn navbar-right">Login</a>
 		
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="MainHome"><p class= "navbutton">Home</p></a>
 				<li><a href="#aboutus"><p class= "navbutton">About us</p></a>
-				<li><a href="Investors"><p class= "navbutton">Investors</p></a>
-				<li><a href="#careers"><p class= "navbutton">Careers</p></a>
 				<li><a href="#contactus"><p class= "navbutton">Contact Us</p></a>
-				<li><a href="Services"><p class= "navbutton">Third Party Services</p></a>
+				<li><a href="Services"><p class= "navbutton">Our Services</p></a>
 				
 			</ul>
 		
@@ -124,24 +122,15 @@ p.navbutton{
 			<div class="col-lg-4" id="contactus"></br>
 			 <h4>Contact us</h4>
 			<p class= "careers"><strong>HappyMarriages Ltd.</strong></br>
-			No:94, TVH Beliciaa Towers,
-			10th Floor, Tower 2, MRC Nagar,
-			Silk Board, Bangalore - 560 002. 
-			Karnataka, India.</br>
-			<span class="glyphicon glyphicon-envelope"> </span> : venkateswara.rao@hedexperts.com</br> 
-			<span class="glyphicon glyphicon-earphone"></span> : +91 99868 15981</p>
+			 Hosur Main Road, Kudlu Gate,</br>
+			 Hongasandra Village,Begur Hobli,</br>
+			 Bengaluru,</br>
+			 Karnataka 560068</br> 
+			India.</br>
+			<span class="glyphicon glyphicon-envelope"> </span> : info@happymarriages.com</br> 
+			<span class="glyphicon glyphicon-earphone"></span> : +91 9876543210</p>
 		</div> <!-- end of Contactus-->
 		
-	
-			<div class="col-lg-4" id="careers"></br>
-			 <h4><p class= "careers">Careers</p></h4>
-			<p class= "careers">At HappyMarriages Ltd, there are always opportunities for those willing to take up challenging projects, deal in latest technology and business models, put their diverse expertise and minds into process and get the work done.
-		</p></div> <!-- end of Contactus-->
-
-		<div class="col-lg-4"></br>
-			 <h4><p class= "careers">Follow Us on</p></h4>
-			<p class= "careers"> Facebook </br> Twitter
-		</p></div> <!-- end of Contactus-->
 </div></div>	
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->

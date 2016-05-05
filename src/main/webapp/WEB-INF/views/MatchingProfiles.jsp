@@ -20,6 +20,36 @@
 
 
 </head>
+<style>
+#header {
+    background-color:#FF0033;
+	color:white;
+    text-align:center;
+    padding:15px;
+}
+p.title {
+    font-family: "Forte";
+	font-size: 60px;
+}
+p.body {
+	font-family: "Book Antiqua (Body)";
+	font-size: 20px;
+}
+p.careers{
+	font-family: "Book Antiqua (Body)";
+	font-size: 20px;
+}
+p.navbutton{
+	font-family: "Tempus Sans ITC";
+	font-weight : bold;
+	font-size: 20px;
+}
+p.login{
+	font-family: "Tempus Sans ITC";
+	font-weight : bold;
+	font-size: 30px;
+}
+</style>
 <body>
 	<!--Navbar-->
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-default">
@@ -34,14 +64,12 @@
 		</div>
 		<!-- End navbar header--->
 		<div class="collapse navbar-collapse" id="navbar-collapse">
-
+	`		<a href="MainHome" class="btn btn-warning navbar-btn navbar-right">Log out</a>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="MainHome"><p class="navbutton">Home</p></a>
 				<li><a href="Aboutus"><p class="navbutton">About us</p></a>
-				<li><a href="MainHome"><p class="navbutton">Investors</p></a>
-				<li><a href="MainHome"><p class="navbutton">Careers</p></a>
 				<li><a href="MainHome"><p class="navbutton">Contact Us</p></a>
-				<li><a href="Services"><p class="navbutton">Third Party
+				<li><a href="Services"><p class="navbutton">Our 
 							Services</p></a>
 			</ul>
 

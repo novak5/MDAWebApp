@@ -14,6 +14,36 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" />
 </head>
+<style>
+#header {
+    background-color:#FF0033;
+	color:white;
+    text-align:center;
+    padding:15px;
+}
+p.title {
+    font-family: "Forte";
+	font-size: 60px;
+}
+p.body {
+	font-family: "Book Antiqua (Body)";
+	font-size: 20px;
+}
+p.careers{
+	font-family: "Book Antiqua (Body)";
+	font-size: 20px;
+}
+p.navbutton{
+	font-family: "Tempus Sans ITC";
+	font-weight : bold;
+	font-size: 20px;
+}
+p.login{
+	font-family: "Tempus Sans ITC";
+	font-weight : bold;
+	font-size: 30px;
+}
+</style>
 <body>
 	<!--Navbar-->
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-default">
@@ -29,16 +59,14 @@
 			<!-- End navbar header--->
 			<div class "collapse navbar-collapse" id="navbar-collapse">
 
-				<a href="Signup" class="btn btn-warning navbar-btn navbar-right">Sign
-					up</a>
+				<a href="Signup" class="btn btn-warning navbar-btn navbar-right">Sign up</a>
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="MainHome"><p class="navbutton">Home</p></a>
 					<li><a href="Aboutus"><p class="navbutton">About us</p></a>
 					<li><a href="#contactus"><p class="navbutton">Contact
 								Us</p></a>
-					<li><a href="Services"><p class="navbutton">
-								 Services</p></a>
+					<li><a href="Services"><p class="navbutton">Services</p></a>
 				</ul>
 
 			</div>

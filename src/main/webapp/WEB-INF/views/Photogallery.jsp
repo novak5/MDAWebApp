@@ -21,7 +21,7 @@
     padding:15px;
 }
 p.title {
-    font-family: "Blackadder ITC";
+    font-family: "Forte";
 	font-size: 60px;
 }
 p.body {
@@ -87,19 +87,17 @@ font-size: 18px;
 		<span class="icon-bar"> </span>
 		<span class="icon-bar"> </span>
 		<span class="icon-bar"> </span>
-		<span class="icon-bar"> </span>
 		</button>
 		</div><!-- End navbar header--->
 		<div class "collapse navbar-collapse" id="navbar-collapse">
 		
 		<a href="MainHome" class="btn btn-warning navbar-btn navbar-right">Sign out</a>
-		
+			`		<a href="MainHome" class="btn btn-warning navbar-btn navbar-right">Log out</a>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="MainHome"><p class= "navbutton">Home</p></a>
 				<li><a href="Aboutus"><p class= "navbutton">About us</p></a>
-				<li><a href="MainHome"><p class= "navbutton">Careers</p></a>
 				<li><a href="MainHome"><p class= "navbutton">Contact Us</p></a>
-				<li><a href="Services"><p class= "navbutton">Third Party Services</p></a>
+				<li><a href="Services"><p class= "navbutton">Our Services</p></a>
 				
 			</ul>
 		

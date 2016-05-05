@@ -22,7 +22,7 @@
     padding:15px;
 }
 p.title {
-    font-family: "Blackadder ITC";
+    font-family: "Forte";
 	font-size: 60px;
 }
 p.body {
@@ -82,10 +82,8 @@ p.login{
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="MainHome"><p class= "navbutton">Home</p></a>
 				<li><a href="Aboutus"><p class= "navbutton">About us</p></a>
-				<li><a href="Investors"><p class= "navbutton">Investors</p></a>
-				<li><a href="MainHome"><p class= "navbutton">Careers</p></a>
 				<li><a href="MainHome"><p class= "navbutton">Contact Us</p></a>
-				<li><a href="#Services"><p class= "navbutton">Third Party Services</p></a>
+				<li><a href="#Services"><p class= "navbutton">Our Services</p></a>
 				
 			</ul>
 		

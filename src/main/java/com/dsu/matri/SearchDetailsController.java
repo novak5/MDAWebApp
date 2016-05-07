@@ -3,6 +3,8 @@ package com.dsu.matri;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -11,10 +13,12 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dsu.model.MyProfile;
 import com.dsu.model.Registration;
 
 
@@ -62,7 +66,7 @@ public class SearchDetailsController {
 		query1.addCriteria(Criteria.where("mothertongue").is(mothertongue)
 				 //.and("heightfrom").is(heightfrom)
 				 //.and("heightto").is(heightto)
-				 .and("maritalstatus").is(maritalstatus)
+				 .and("d_mstatus").is(maritalstatus)
 				.and("religion").is(community)
 				.and("gender").is(gender)
 				 //.and("age").in(agefrom,ageto)
@@ -86,5 +90,11 @@ public class SearchDetailsController {
 
 		return "SearchDetails";
 	}
+	
+@RequestMapping(value="interest",params="SendInterest", method = RequestMethod.POST)
+	
+	public void SendInterest(Model model) {
+		logger.info("Interest sent");
+  }
 
 }

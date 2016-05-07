@@ -33,6 +33,7 @@ function promptMessage(){
 </head>
 <body>
 
+   <form action="SendInterest" method="post" name="smart">
     
 
 	<!--Navbar-->
@@ -96,7 +97,6 @@ function promptMessage(){
 								<c:out value="${profile.getName()}" />
 							</p>-->
 						 <c:forEach var="profile" items="${list}"> 
-    						<option value ="10">
     						<p class="text-warning">
 								Name :
 								<c:out value="${profile.getName()}" />
@@ -111,28 +111,27 @@ function promptMessage(){
 								<p class="text-warning">
     							Religion :<c:out value="${profile.getReligion()}"/>
     						</p>
-    						</p>
-								<p class="text-warning">
+    					
+							<p class="text-warning">
     							Country :<c:out value="${profile.getCountry()}"/>
     						</p>
-    						</p>
+    						
 								<p class="text-warning">
     							Age :<c:out value="${profile.getAge()}"/>
     						</p>
-    						    						<p class="text-warning">
+    						    <p class="text-warning">
     							ProfileID :
     							<%= (int) (Math.random()*15777) %>
     							
     						</p>
     						<input class="btn btn-warning" type="button" value="View Profile" />
-							<input class="btn btn-warning" type="button"
-								value="Send interest" />
+							<input class="btn btn-warning" type="submit" value="Send interest" />
 									
 							 <input class="btn btn-warning" type="button" value="Send message" id="showTextArea" onclick="promptMessage()"/>
-							<textarea id="myTextArea" style="display: none;">
+							
 								
 							<hr width=100% align=left>
-    						</option>
+    						
 							</c:forEach>
 						
 							
@@ -150,5 +149,6 @@ function promptMessage(){
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<div id="footer">Copyright © 2015. All rights reserved. NOVAK</div>
+	</form>
 </body>
 </html>

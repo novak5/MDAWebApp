@@ -102,7 +102,7 @@ p.login{
 							
 								<!--  	<img src="resources/images/ambika.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>-->
 							
-Matching Profiles					
+		Matching Profiles					
 
 						</div>
 		
@@ -115,6 +115,7 @@ Matching Profiles
     							ProfileID :
 								<c:out value="${profile.getProfileID()}" />
     						</p>
+    						
     						<p class="text-warning">
 								MotherTongue :
 								<c:out value="${profile.getMotherTongue()}" />
@@ -135,12 +136,12 @@ Matching Profiles
 								 <input class="btn btn-warning"
 								type="button" value="Send message" />
 							
-		   				<img src="resources/images/female-i-o.jpg" class="img-rounded" alt="Cinque Terre" width="250" height="200"> </div>
+		   				<img src="${imageFile}" width="250" height="200"> 
 		    		
 								
 							<hr width=100% align=left>
     						
-							</c:forEach>
+					</c:forEach></div>
 							 <ul class="pagination pagination-sm">
         <li>
         

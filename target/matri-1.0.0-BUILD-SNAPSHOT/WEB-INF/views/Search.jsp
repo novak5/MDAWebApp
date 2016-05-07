@@ -28,6 +28,34 @@
 </head>
 
 <style>
+#header {
+    background-color:#FF0033;
+	color:white;
+    text-align:center;
+    padding:15px;
+}
+p.title {
+    font-family: "Forte";
+	font-size: 60px;
+}
+p.body {
+	font-family: "Book Antiqua (Body)";
+	font-size: 20px;
+}
+p.careers{
+	font-family: "Book Antiqua (Body)";
+	font-size: 20px;
+}
+p.navbutton{
+	font-family: "Tempus Sans ITC";
+	font-weight : bold;
+	font-size: 20px;
+}
+p.login{
+	font-family: "Tempus Sans ITC";
+	font-weight : bold;
+	font-size: 30px;
+}
 body {
 	background: url('mrg-4.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -53,16 +81,15 @@ body {
 			<!-- End navbar header--->
 			<div class "collapse navbar-collapse" id="navbar-collapse">
 
-
+	`		<a href="MainHome" class="btn btn-warning navbar-btn navbar-right">Log out</a>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="home.html"><p class="navbutton">Home</p></a>
 					<li><a href="aboutus.html"><p class="navbutton">About
 								us</p></a>
-					<li><a href="#careers"><p class="navbutton">Careers</p></a>
+		
 					<li><a href="home.html"><p class="navbutton">Contact
 								Us</p></a>
-					<li><a href="services.html"><p class="navbutton">Third
-								Party Services</p></a>
+					<li><a href="services.html"><p class="navbutton">Our Services</p></a>
 				</ul>
 
 			</div>
